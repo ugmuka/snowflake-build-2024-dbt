@@ -1,0 +1,65 @@
+sources:
+  - name: salesforce
+    database: BUILD_DEMO
+    schema: SALESFORCE
+    tables:
+      - name: vegetable_planting_yearly
+        columns:
+          - name: planting_year__c
+            data_type: date
+          - name: vegetable_name__c
+            data_type: varchar
+          - name: planted_area_ha__c
+            data_type: varchar
+          - name: harvest_amount_ton__c
+            data_type: varchar
+          - name: shipping_amount_ton__c
+            data_type: varchar
+
+      - name: vegetable_price_weekly
+        columns:
+          - name: survey_week__c
+            data_type: date
+          - name: price_cabbage__c
+            data_type: number
+          - name: price_green_onion__c
+            data_type: number
+          - name: price_lettuce__c
+            data_type: number
+          - name: price_potato__c
+            data_type: number
+          - name: price_onion__c
+            data_type: number
+          - name: price_cucumber__c
+            data_type: number
+          - name: price_tomato__c
+            data_type: number
+          - name: price_carrot__c
+            data_type: number
+          - name: price_chinese_cabbage__c
+            data_type: number
+          - name: price_radish__c
+            data_type: number
+
+      - name: weather_stats_weekly
+        columns:
+          - name: start_date__c
+            data_type: date
+          - name: end_date__c
+            data_type: date
+          - name: avg_temp_celsius__c
+            data_type: number
+          - name: avg_daily_high_temp_celsius__c
+            data_type: number
+          - name: avg_daily_low_temp_celsius__c
+            data_type: number
+          - name: total_rainfall_mm__c
+            data_type: number
+          - name: max_10min_rainfall_mm__c
+            data_type: number
+          - name: total_sunlight_hours__c
+            data_type: number
+          - name: max_snow_depth_cm
+            data_type: number
+          - name: total_snowfall_cm
+            data_type: number
