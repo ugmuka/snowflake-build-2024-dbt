@@ -18,7 +18,8 @@ with
         from source
     ),
 
-    unpivot_vegitable as (
+    -- 横持ちになっているものを縦持ちに変換
+    unpivot_vegetable as (
         select * from renamed
         unpivot (price for vegetable_name in (
             "キャベツ",
@@ -32,7 +33,16 @@ with
             "はくさい",
             "だいこん"
         ))
+    ),
+
+    final as (
+        select
+            survey_week,
+            vegetable_name,
+            price
+        from
+            unpivot_vegetable
     )
 
 select *
-from unpivot_vegitable
+from final

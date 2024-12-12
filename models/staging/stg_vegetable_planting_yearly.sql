@@ -24,7 +24,17 @@ with
             to_number(replace(harvest_amount_ton, ',')) as harvest_amount_ton,
             to_number(replace(shipping_amount_ton, ',')) as shipping_amount_ton
         from renamed
+    ),
+
+    final as (
+        select
+            planting_year,
+            vegetable_name,
+            planted_area_ha,
+            harvest_amount_ton,
+            shipping_amount_ton
+        from column_format
     )
 
 select *
-from column_format
+from final
