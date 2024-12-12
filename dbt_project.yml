@@ -21,3 +21,5 @@ models:
     +materialized: table
     staging:
       +schema: staging
+    mart:
+      +schema: mart
