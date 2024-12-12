@@ -4,62 +4,98 @@ sources:
     schema: SALESFORCE
     tables:
       - name: vegetable_planting_yearly
+        description: >
+          野菜作付け
+          元データ: https://vegetan.alic.go.jp/vegetan/sch6.do?outPutKbn=2
         columns:
           - name: planting_year__c
             data_type: date
+            description: 作付年
           - name: vegetable_name__c
             data_type: varchar
+            description: 品目名
           - name: planted_area_ha__c
             data_type: varchar
+            description: 作付面積(ha)
           - name: harvest_amount_ton__c
             data_type: varchar
+            description: 収穫量(t)
           - name: shipping_amount_ton__c
             data_type: varchar
+            description: 出荷量(t)
 
       - name: vegetable_price_weekly
+        description: >
+          食品価格動向調査(野菜) 
+          元データ: https://www.maff.go.jp/j/zyukyu/anpo/kouri/k_yasai/h22index.html
+          API版: https://www.cultivationdata.net/yasai-kakaku-web-api.html
         columns:
           - name: survey_week__c
             data_type: date
+            description: 週
           - name: price_cabbage__c
             data_type: number
+            description: 価格(キャベツ)
           - name: price_green_onion__c
             data_type: number
+            description: 価格(ねぎ)
           - name: price_lettuce__c
             data_type: number
+            description: 価格(レタス)
           - name: price_potato__c
             data_type: number
+            description: 価格(ばれいしょ)
           - name: price_onion__c
             data_type: number
+            description: 価格(たまねぎ)
           - name: price_cucumber__c
             data_type: number
+            description: 価格(きゅうり)
           - name: price_tomato__c
             data_type: number
+            description: 価格(トマト)
           - name: price_carrot__c
             data_type: number
+            description: 価格(にんじん)
           - name: price_chinese_cabbage__c
             data_type: number
+            description: 価格(はくさい)
           - name: price_radish__c
             data_type: number
+            description: 価格(だいこん)
 
       - name: weather_stats_weekly
+        description: >
+          気象データ
+          https://www.data.jma.go.jp/gmd/risk/obsdl/ から東京都のみ取得
         columns:
           - name: start_date__c
             data_type: date
+            description: 開始日
           - name: end_date__c
             data_type: date
+            description: 終了日
           - name: avg_temp_celsius__c
             data_type: number
+            description: 7日間平均気温
           - name: avg_daily_high_temp_celsius__c
             data_type: number
+            description: 日最高気温の7日間平均
           - name: avg_daily_low_temp_celsius__c
             data_type: number
+            description: 日最低気温の7日間平均
           - name: total_rainfall_mm__c
             data_type: number
+            description: 降水量の7日間合計
           - name: max_10min_rainfall_mm__c
             data_type: number
+            description: 10分間降水量の7日間最大
           - name: total_sunlight_hours__c
             data_type: number
+            description: 日照時間の7日間合計
           - name: max_snow_depth_cm
             data_type: number
+            description: 7日間最深積雪
           - name: total_snowfall_cm
             data_type: number
+            description: 降雪量の7日間合計
