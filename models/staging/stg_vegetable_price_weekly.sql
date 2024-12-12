@@ -1,16 +1,3 @@
-{% set unpivot_mapping = [
-    ['cabbage', 'キャベツ'],
-    ['green_onion', 'ねぎ'],
-    ['lettuce', 'レタス'],
-    ['potato', 'ばれいしょ'],
-    ['onion', 'たまねぎ'],
-    ['cucumber', 'きゅうり'],
-    ['tomato', 'トマト'],
-    ['carrot', 'にんじん'],
-    ['chinese_cabbage', 'はくさい'],
-    ['radish', 'だいこん']
-]%}
-
 with
 
     source as (select * from {{ source("salesforce", "vegetable_price_weekly") }}),
