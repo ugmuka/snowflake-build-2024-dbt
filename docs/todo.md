@@ -27,3 +27,4 @@ SmartCIの良さ（CI用意って大変だよね
 - [ ] (mukai) exporsureの設定
 - [ ] (takimo) merge jobの設定と動作確認
 - [ ] (takimo) 当日行うちょっとした修正の計画（事前に試しておく）
+- [ ] (takimo) sqlfluffの設定変更
