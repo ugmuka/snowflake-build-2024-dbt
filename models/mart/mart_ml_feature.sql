@@ -9,7 +9,7 @@ import_stg_weather_stats_weekly as (
 
 final as (
     select
-        import_stg_vegetable_price_weekly.survey_week as date,
+        import_stg_vegetable_price_weekly.survey_week,
         import_stg_vegetable_price_weekly.vegetable_name,
         import_stg_weather_stats_weekly.avg_temp_celsius,
         import_stg_weather_stats_weekly.avg_daily_high_temp_celsius,
