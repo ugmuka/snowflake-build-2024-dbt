@@ -1,9 +1,9 @@
 with
     import_stg_vegetable_price_weekly as (
-        select * from {{ ref('stg_vegetable_price_weekly') }}
+        select * from {{ ref("stg_vegetable_price_weekly") }}
     ),
     import_stg_weather_stats_weekly as (
-        select * from {{ ref('stg_weather_stats_weekly')}}
+        select * from {{ ref("stg_weather_stats_weekly") }}
     ),
     final as (
         select
@@ -18,12 +18,11 @@ with
             import_stg_weather_stats_weekly.max_snow_depth_cm,
             import_stg_weather_stats_weekly.total_snowfall_cm,
             import_stg_vegetable_price_weekly.price,
-        from
-            import_stg_vegetable_price_weekly
-            left outer join
-                import_stg_weather_stats_weekly
-                on
-                    import_stg_vegetable_price_weekly.survey_week = import_stg_weather_stats_weekly.start_date
+        from import_stg_vegetable_price_weekly
+        left outer join
+            import_stg_weather_stats_weekly
+            on import_stg_vegetable_price_weekly.survey_week
+            = import_stg_weather_stats_weekly.start_date
     )
 
 select *
