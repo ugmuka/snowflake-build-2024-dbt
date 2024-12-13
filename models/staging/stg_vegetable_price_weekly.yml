@@ -1,0 +1,8 @@
+models:
+  - name: stg_vegetable_price_weekly
+    # tests:
+    #   - 
+    columns:
+      - name: price
+        tests:
+          - not_null
