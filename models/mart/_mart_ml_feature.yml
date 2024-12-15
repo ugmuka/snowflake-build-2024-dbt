@@ -1,6 +1,11 @@
 version: 2
 models:
   - name: mart_ml_feature
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - survey_week
+            - vegetable_name
     columns:
       - name: survey_week
         description: '週'
@@ -35,3 +40,5 @@ models:
       - name: price
         description: '価格'
         data_type: number
+        tests:
+          - not_null

@@ -3,28 +3,33 @@ models:
   - name: stg_weather_stats_weekly
     columns:
       - name: start_date
-        description: '開始日'
+        description: "開始日"
         data_type: date
+        tests:
+          - not_null
+          - unique
       - name: end_date
-        description: '終了日'
+        description: "終了日"
         data_type: date
+          - not_null
+          - unique
       - name: avg_temp_celsius
-        description: '7日間平均気温'
+        description: "7日間平均気温"
         data_type: number
       - name: avg_daily_high_temp_celsius
-        description: '日最高気温の7日間平均'
+        description: "日最高気温の7日間平均"
         data_type: number
       - name: avg_daily_low_temp_celsius
-        description: '日最低気温の7日間平均'
+        description: "日最低気温の7日間平均"
         data_type: number
       - name: total_rainfall_mm
-        description: '降水量の7日間合計'
+        description: "降水量の7日間合計"
         data_type: number
       - name: max_10min_rainfall_mm
-        description: '10分間降水量の7日間最大'
+        description: "10分間降水量の7日間最大"
         data_type: number
       - name: total_sunlight_hours
-        description: '日照時間の7日間合計'
+        description: "日照時間の7日間合計"
         data_type: number
       - name: max_snow_depth_cm
         description: 7日間最深積雪

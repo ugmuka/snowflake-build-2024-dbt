@@ -1,8 +1,11 @@
 version: 2
 models:
   - name: stg_vegetable_price_weekly
-    # tests:
-    #   -
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - survey_week
+            - vegetable_name
     columns:
       - name: survey_week
         description: '週'

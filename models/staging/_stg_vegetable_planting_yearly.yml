@@ -4,6 +4,11 @@ models:
     description: >
       野菜作付け
       元データ: https://vegetan.alic.go.jp/vegetan/sch6.do?outPutKbn=2
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - planting_year
+            - vegetable_name
     columns:
       - name: planting_year
         data_type: date
