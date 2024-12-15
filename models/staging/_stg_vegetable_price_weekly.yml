@@ -1,0 +1,17 @@
+version: 2
+models:
+  - name: stg_vegetable_price_weekly
+    # tests:
+    #   -
+    columns:
+      - name: survey_week
+        description: '週'
+        data_type: date
+      - name: vegetable_name
+        description: '品目名'
+        data_type: varchar
+      - name: price
+        description: '価格'
+        data_type: number
+        tests:
+          - not_null
