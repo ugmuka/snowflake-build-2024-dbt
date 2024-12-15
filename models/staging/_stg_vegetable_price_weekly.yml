@@ -1,6 +1,10 @@
 version: 2
 models:
   - name: stg_vegetable_price_weekly
+    description: >
+      食品価格動向調査(野菜) 
+      元データ: https://www.maff.go.jp/j/zyukyu/anpo/kouri/k_yasai/h22index.html
+      API版: https://www.cultivationdata.net/yasai-kakaku-web-api.html
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
