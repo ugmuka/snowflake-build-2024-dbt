@@ -1,0 +1,46 @@
+version: 2
+models:
+  - name: mart_ml_feature
+    description: >
+      野菜価格と気象情報を週次でjoinしたテーブル
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - survey_week
+            - vegetable_name
+    columns:
+      - name: survey_week
+        description: '週'
+        data_type: date
+      - name: vegetable_name
+        description: '品目名'
+        data_type: varchar
+      - name: avg_temp_celsius
+        description: '7日間平均気温'
+        data_type: number
+      - name: avg_daily_high_temp_celsius
+        description: '日最高気温の7日間平均'
+        data_type: number
+      - name: avg_daily_low_temp_celsius
+        description: '日最低気温の7日間平均'
+        data_type: number
+      - name: total_rainfall_mm
+        description: '降水量の7日間合計'
+        data_type: number
+      - name: max_10min_rainfall_mm
+        description: '10分間降水量の7日間最大'
+        data_type: number
+      - name: total_sunlight_hours
+        description: '日照時間の7日間合計'
+        data_type: number
+      - name: max_snow_depth_cm
+        description: 7日間最深積雪
+        data_type: number
+      - name: total_snowfall_cm
+        description: 降雪量の7日間合計
+        data_type: number
+      - name: price
+        description: '価格'
+        data_type: number
+        tests:
+          - not_null

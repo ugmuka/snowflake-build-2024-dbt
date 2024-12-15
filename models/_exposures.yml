@@ -1,0 +1,17 @@
+version: 2
+
+exposures:
+
+  - name: ml_notebook
+    type: notebook
+    maturity: medium
+    url: "TODO: url更新"
+    description: >
+      野菜の価格予想を行うnotebook
+
+    depends_on:
+      - ref('mart_ml_feature')
+
+    owner:
+      name: Yuji Mukai
+      email: y.mukai@datumstudio.jp

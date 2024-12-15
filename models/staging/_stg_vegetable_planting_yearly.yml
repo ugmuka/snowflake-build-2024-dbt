@@ -1,0 +1,27 @@
+version: 2
+models:
+  - name: stg_vegetable_planting_yearly
+    description: >
+      野菜作付け
+      元データ: https://vegetan.alic.go.jp/vegetan/sch6.do?outPutKbn=2
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - planting_year
+            - vegetable_name
+    columns:
+      - name: planting_year
+        data_type: date
+        description: 作付年
+      - name: vegetable_name
+        data_type: varchar
+        description: 品目名
+      - name: planted_area_ha
+        data_type: varchar
+        description: 作付面積(ha)
+      - name: harvest_amount_ton
+        data_type: varchar
+        description: 収穫量(t)
+      - name: shipping_amount_ton
+        data_type: varchar
+        description: 出荷量(t)
