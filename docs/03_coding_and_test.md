@@ -1,10 +1,15 @@
-# モデル開発とデータ品質のチェック用のテストの実装
+# モデル開発とデータコントラクトの検証用のテストの実装
 
 ## 諦めること：5分で全部は作れない、ごめんなさい
 
 ## 今日のデモでやること
 - データソースの紹介とクレンジングの処理は大雑把に説明します
-- 最終的に提供するデータ（mart_ml_feature）の実装を開発し、データの検証を行うテストを実装して検証してみる
+- 最終的に提供するデータ（mart_ml_feature）の実装を開発し、データコントラクトの検証を行うテストを実装して検証してみる
+    - モデルの開発
+    - テストの設定と実行
+- PRの作成とCIの確認
+- dbtExplorer(データカタログ)でドキュメントと成果物の確認する
+
 
 ## データソースの紹介
 食品価格動向調査(野菜) 
@@ -57,7 +62,17 @@ select *
 from final
 ```
 
-## _mart_ml_feature.ymlでデータ品質用のテストを実装する
+## _mart_ml_feature.ymlでデータコントラクトの検証用のテストを実装する
 
-- survey_weekとvegetable_nameの組み合わせでユニークになっているか検証する(unique)
-- priceが必ず設定されているか検証する（not_null）
+- [データ品質を保証できていない状態を確認する](https://zd081.us1.dbt.com/explore/70471823405913/projects/70471823407351/environments/production/details/model.build_2024.mart_ml_feature)
+- 以下のようなデータコントラクトを定義して、実装する
+  - survey_weekとvegetable_nameの組み合わせでユニークになっているか(unique)
+  - priceが必ず設定されているか（not_null）
+
+## PRの作成とCIの確認
+- PRを作成し、CIが成功したのを確認し、マージをする
+- マージをするとマージジョブが動作し、デプロイが実行される
+    - https://zd081.us1.dbt.com/deploy/70471823405913/projects/70471823407351/jobs/70471823405483
+
+## dbtExplorer(データカタログ)でドキュメントと成果物の確認する
+https://zd081.us1.dbt.com/explore/70471823405913/projects/70471823407351/environments/production/details/model.build_2024.mart_ml_feature
