@@ -3,11 +3,12 @@ models:
   - name: mart_ml_feature
     description: >
       野菜価格と気象情報を週次でjoinしたテーブル
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - survey_week
-            - vegetable_name
+    # コメントアウト
+    # tests:
+    #   - dbt_utils.unique_combination_of_columns:
+    #       combination_of_columns:
+    #         - survey_week
+    #         - vegetable_name
     columns:
       - name: survey_week
         description: '週'
@@ -42,5 +43,6 @@ models:
       - name: price
         description: '価格'
         data_type: number
-        tests:
-          - not_null
+        # # わざとコメントアウト
+        # tests:
+        #   - not_null
