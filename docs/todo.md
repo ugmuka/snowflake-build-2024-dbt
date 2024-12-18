@@ -22,9 +22,9 @@ SmartCIの良さ（CI用意って大変だよね
 - semantic_layerは諦める（時間が必要そう
 
 # 残タスク
-- [ ] (mukai) stagingへのテスト追加
-- [ ] (mukai) mart_ml_featureへのテストとドキュメントの追加
-- [ ] (mukai) exporsureの設定
-- [ ] (takimo) merge jobの設定と動作確認
+- [x] (mukai) stagingへのテスト追加
+- [x] (mukai) mart_ml_featureへのテストとドキュメントの追加
+- [x] (mukai) exporsureの設定
+- [x] (takimo) merge jobの設定と動作確認
 - [ ] (takimo) 当日行うちょっとした修正の計画（事前に試しておく）
 - [ ] (takimo) sqlfluffの設定変更
