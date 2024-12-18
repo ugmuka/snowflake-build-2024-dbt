@@ -26,5 +26,5 @@ SmartCIの良さ（CI用意って大変だよね
 - [x] (mukai) mart_ml_featureへのテストとドキュメントの追加
 - [x] (mukai) exporsureの設定
 - [x] (takimo) merge jobの設定と動作確認
-- [ ] (takimo) 当日行うちょっとした修正の計画（事前に試しておく）
+- [x] (takimo) 当日行うちょっとした修正の計画（事前に試しておく）
 - [ ] (takimo) sqlfluffの設定変更
